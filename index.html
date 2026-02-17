@@ -1,1 +1,526 @@
-<div style="background-color: red; color: black">Ola teste</div>
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/1.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="images/1.png" type="image/png" />
+    <link rel="icon" sizes="16x16" href="images/1.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/1.png" />
+    <meta property="og:title" content="Parece que alguém faz anos!" />
+    <meta
+      property="og:description"
+      content="Template simples com cores terrosas, muito espaço em branco e formas suaves para destacar projetos, livros e ilustrações."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/3.png" />
+    <meta property="og:url" content="https://example.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Parece que alguém faz anos!" />
+    <meta
+      name="twitter:description"
+      content="Template simples com cores terrosas, muito espaço em branco e formas suaves para destacar projetos, livros e ilustrações."
+    />
+    <meta name="twitter:image" content="images/3.png" />
+    <title>Parece que alguém faz anos!</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+      :root {
+        --paper: #f4efe6;
+        --sand: #e7d7c3;
+        --mustard: #d5a547;
+        --clay: #c16f52;
+        --charcoal: #2b2723;
+        --shadow: rgba(43, 39, 35, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+        background: var(--paper);
+        color: var(--charcoal);
+        line-height: 1.6;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        padding: 32px 8vw 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .logo-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-mark {
+        width: 28px;
+        height: 28px;
+        display: block;
+        margin-right: -6px;
+      }
+
+      nav a {
+        margin-left: 16px;
+        text-decoration: none;
+        color: var(--charcoal);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      main {
+        flex: 1;
+        padding: 24px 8vw 48px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+        align-items: center;
+      }
+
+      .hero {
+        max-width: 520px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        margin: 0 0 12px;
+      }
+
+      .hero p {
+        margin: 0 0 24px;
+      }
+
+      .cta {
+        display: inline-block;
+        padding: 12px 22px;
+        background: var(--mustard);
+        color: var(--charcoal);
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 999px;
+        box-shadow: 0 8px 16px var(--shadow);
+      }
+
+      .artboard {
+        position: relative;
+        display: grid;
+        place-items: center;
+        justify-items: end;
+      }
+
+      .hero-illustration {
+        width: min(480px, 85%);
+        height: auto;
+        display: block;
+      }
+
+      .section {
+        padding: 32px 8vw 48px;
+      }
+
+      .section-title {
+        margin: 0 0 16px;
+        font-size: 1.6rem;
+      }
+
+      .section-subtitle {
+        margin: 0 0 24px;
+        color: #4d463f;
+        max-width: 680px;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .work-card {
+        background: var(--sand);
+        padding: 18px;
+        border-radius: 20px;
+        box-shadow: 0 10px 24px var(--shadow);
+      }
+
+      .work-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.1rem;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .about-dark {
+        background: #12100e;
+        color: #f4efe6;
+      }
+
+      .about-dark .section-subtitle {
+        color: #d8d0c6;
+      }
+
+      .about-media {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .about-image {
+        width: 50%;
+        max-width: 240px;
+        margin-top: 32px;
+        margin-left: 16px;
+        height: auto;
+        display: block;
+      }
+
+      .about-content {
+        display: grid;
+        gap: 16px;
+      }
+
+      .about-box {
+        background: var(--sand);
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .contact-item {
+        background: var(--sand);
+        padding: 14px 18px;
+        border-radius: 16px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .contact-media {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .contact-image {
+        width: 50%;
+        max-width: 240px;
+        margin-top: 32px;
+        margin-left: 16px;
+        height: auto;
+        display: block;
+      }
+
+      .contact-content {
+        display: grid;
+        gap: 16px;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 12px;
+        max-width: 420px;
+      }
+
+      .contact-form label {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid #d8cfc3;
+        background: #fffdf9;
+        font-family: inherit;
+        font-size: 1rem;
+      }
+
+      .contact-form textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .child-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+      }
+
+      .contact-form button {
+        align-self: start;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 999px;
+        background: var(--charcoal);
+        color: #f4efe6;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .form-status {
+        font-size: 0.95rem;
+        color: #4d463f;
+      }
+
+      .contact-light {
+        background: #f1ece8;
+      }
+
+      footer {
+        padding: 20px 8vw 32px;
+        border-top: 1px solid #e3d9cb;
+        font-size: 0.9rem;
+        color: #5b534b;
+      }
+
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        nav a {
+          margin-left: 0;
+          margin-right: 12px;
+        }
+
+        main {
+          gap: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page" id="topo">
+      <header>
+        <div class="logo-wrap">
+          <img class="logo-mark" src="images/1.png" alt="Símbolo" />
+          <div class="logo">eva evaristo</div>
+        </div>
+        <nav>
+          <a href="#topo">início</a>
+          <a href="#trabalhos">trabalhos</a>
+          <a href="#sobre">sobre</a>
+          <a href="#contato">contato</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1>Um espaço calmo para histórias visuais.</h1>
+          <p>
+            Template simples com cores terrosas, muito espaço em branco e formas
+            suaves para destacar projetos, livros e ilustrações.
+          </p>
+          <a class="cta" href="#">Quero ir...</a>
+        </section>
+
+        <section class="artboard" aria-label="Ilustração">
+          <img
+            class="hero-illustration"
+            src="images/3.png"
+            alt="Ilustração principal"
+          />
+        </section>
+      </main>
+
+      <section class="section" id="trabalhos">
+        <h2 class="section-title">Trabalhos</h2>
+        <p class="section-subtitle">
+          Projetos recentes com foco em narrativa visual, capas de livro e
+          ilustrações editoriais.
+        </p>
+        <div class="work-grid">
+          <article class="work-card">
+            <h3>Série editorial</h3>
+            <p>Ilustrações suaves e minimalistas para histórias curtas.</p>
+          </article>
+          <article class="work-card">
+            <h3>Capa de livro</h3>
+            <p>Composição terrosa com personagens expressivos.</p>
+          </article>
+          <article class="work-card">
+            <h3>Identidade visual</h3>
+            <p>Paleta quente e tipografia simples para marcas criativas.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section about-dark" id="sobre">
+        <div class="about-grid">
+          <div class="about-media">
+            <img
+              class="about-image"
+              src="images/13.png"
+              alt="Ilustração sobre"
+            />
+          </div>
+          <div class="about-content">
+            <div>
+              <h2 class="section-title">Sobre</h2>
+              <p class="section-subtitle">
+                Um estúdio dedicado a ilustrações com ritmo calmo, humor sutil e
+                muito espaço para respirar.
+              </p>
+            </div>
+            <div>
+              <p>
+                Trabalho com narrativas visuais para livros, revistas e projetos
+                culturais. A estética aposta em texturas suaves, cores quentes e
+                formas simples.
+              </p>
+              <p>
+                Disponível para colaborações e projetos personalizados em 2026.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-light" id="contato">
+        <div class="contact-grid">
+          <div class="contact-media">
+            <img
+              class="contact-image"
+              src="images/10.png"
+              alt="Ilustração contato"
+            />
+          </div>
+          <div class="contact-content">
+            <div>
+              <h2 class="section-title">Contato</h2>
+              <p class="section-subtitle">
+                Escreve até 5 nomes e indica se são crianças. Depois submete.
+              </p>
+            </div>
+            <form class="contact-form" id="contactForm">
+              <label>Participantes</label>
+
+              <div class="form-row">
+                <input name="name1" type="text" placeholder="Nome 1" />
+                <label class="child-toggle">
+                  <input name="child1" type="checkbox" />
+                  é criança
+                </label>
+              </div>
+
+              <div class="form-row">
+                <input name="name2" type="text" placeholder="Nome 2" />
+                <label class="child-toggle">
+                  <input name="child2" type="checkbox" />
+                  é criança
+                </label>
+              </div>
+
+              <div class="form-row">
+                <input name="name3" type="text" placeholder="Nome 3" />
+                <label class="child-toggle">
+                  <input name="child3" type="checkbox" />
+                  é criança
+                </label>
+              </div>
+
+              <div class="form-row">
+                <input name="name4" type="text" placeholder="Nome 4" />
+                <label class="child-toggle">
+                  <input name="child4" type="checkbox" />
+                  é criança
+                </label>
+              </div>
+
+              <div class="form-row">
+                <input name="name5" type="text" placeholder="Nome 5" />
+                <label class="child-toggle">
+                  <input name="child5" type="checkbox" />
+                  é criança
+                </label>
+              </div>
+
+              <button type="submit">Enviar</button>
+              <div class="form-status" id="contactStatus"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>© 2026 — baseado nos livros de Jon Klassen</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      const SUPABASE_URL = "https://wsnflrhpdorfywudtovj.supabase.co";
+      const SUPABASE_KEY = "sb_publishable_JkLyMmkqqDtS_WB0P2fdiw_sBlhxjd1";
+
+      const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      const contactForm = document.getElementById("contactForm");
+      const contactStatus = document.getElementById("contactStatus");
+
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        contactStatus.textContent = "A enviar...";
+
+        const formData = new FormData(contactForm);
+        const payload = {
+          name: formData.get("name1"),
+          isChild: formData.get("child1") === "on",
+        };
+
+        const { error } = await supabaseClient.from("Guests").insert(payload);
+
+        if (error) {
+          contactStatus.textContent = "Erro ao enviar. Tenta novamente.";
+          return;
+        }
+
+        contactStatus.textContent = "Obrigado! Mensagem enviada.";
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
