@@ -26,7 +26,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
       :root {
-        --paper: #f4efe6;
+        --paper: #f0ebde; /* #f4efe6;*/
         --sand: #e7d7c3;
         --mustard: #d5a547;
         --clay: #c16f52;
@@ -148,6 +148,30 @@
         margin: 0 0 24px;
         color: #4d463f;
         max-width: 680px;
+      }
+
+      .section-location {
+        background: #f0ebdd;
+      }
+
+      .work-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(200px, 0.6fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .work-media {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .work-illustration {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
       }
 
       .work-grid {
@@ -334,6 +358,19 @@
         main {
           gap: 24px;
         }
+
+        .work-section {
+          grid-template-columns: 1fr;
+        }
+
+        .work-media {
+          order: 2;
+          height: auto;
+        }
+
+        .work-illustration {
+          height: auto;
+        }
       }
     </style>
   </head>
@@ -370,28 +407,6 @@
           />
         </section>
       </main>
-
-      <section class="section" id="trabalhos">
-        <h2 class="section-title">Trabalhos</h2>
-        <p class="section-subtitle">
-          Projetos recentes com foco em narrativa visual, capas de livro e
-          ilustrações editoriais.
-        </p>
-        <div class="work-grid">
-          <article class="work-card">
-            <h3>Série editorial</h3>
-            <p>Ilustrações suaves e minimalistas para histórias curtas.</p>
-          </article>
-          <article class="work-card">
-            <h3>Capa de livro</h3>
-            <p>Composição terrosa com personagens expressivos.</p>
-          </article>
-          <article class="work-card">
-            <h3>Identidade visual</h3>
-            <p>Paleta quente e tipografia simples para marcas criativas.</p>
-          </article>
-        </div>
-      </section>
 
       <section class="section about-dark" id="sobre">
         <div class="about-grid">
@@ -486,6 +501,39 @@
               <button type="submit">Enviar</button>
               <div class="form-status" id="contactStatus"></div>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-location" id="trabalhos">
+        <div class="work-section">
+          <div>
+            <h2 class="section-title">Localização</h2>
+            <p class="section-subtitle">
+              Projetos recentes com foco em narrativa visual, capas de livro e
+              ilustrações editoriais.
+            </p>
+            <div class="work-grid">
+              <article class="work-card">
+                <h3>Série editorial</h3>
+                <p>Ilustrações suaves e minimalistas para histórias curtas.</p>
+              </article>
+              <article class="work-card">
+                <h3>Capa de livro</h3>
+                <p>Composição terrosa com personagens expressivos.</p>
+              </article>
+              <article class="work-card">
+                <h3>Identidade visual</h3>
+                <p>Paleta quente e tipografia simples para marcas criativas.</p>
+              </article>
+            </div>
+          </div>
+          <div class="work-media">
+            <img
+              class="work-illustration"
+              src="images/stork_map.png"
+              alt="Mapa Stork"
+            />
           </div>
         </div>
       </section>
