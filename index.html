@@ -7,19 +7,19 @@
     <link rel="icon" sizes="32x32" href="images/1.png" type="image/png" />
     <link rel="icon" sizes="16x16" href="images/1.png" type="image/png" />
     <link rel="apple-touch-icon" href="images/1.png" />
-    <meta property="og:title" content="A Eva faz anos (e tu és suspeito)" />
+    <meta property="og:title" content="A Eva faz anos!!" />
     <meta
       property="og:description"
-      content="A Eva faz anos. E sim, foste oficialmente convidado. Esta é a página oficial (e claramente essencial) sobre a festa"
+      content="E sim, foste oficialmente convidado. Esta é a página oficial (e claramente essencial) sobre a festa"
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="images/3.png" />
     <meta property="og:url" content="https://ruievaristo.github.io/fast/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="A Eva faz anos (e tu és suspeito)" />
+    <meta name="twitter:title" content="A Eva faz anos!!" />
     <meta
       name="twitter:description"
-      content="A Eva faz anos. E sim, foste oficialmente convidado. Esta é a página oficial (e claramente essencial) sobre a festa"
+      content="E sim, foste oficialmente convidado. Esta é a página oficial (e claramente essencial) sobre a festa"
     />
     <meta name="twitter:image" content="images/3.png" />
     <title>A Eva faz anos!!</title>
@@ -65,7 +65,8 @@
 
       .logo {
         font-weight: 700;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.1em;
+        font-size: 20px;
       }
 
       .logo-wrap {
@@ -682,6 +683,11 @@
                     cheio.
                   </li>
                   <li>
+                    🎁 Não é necessário trazer um presente, a Eva não vai
+                    perceber quem trouxe ou não, aproveita agora.
+                  </li>
+
+                  <li>
                     Chega entre as 15h ou 18h porque depois já vais apanhar
                     outra festa.
                   </li>
@@ -767,6 +773,8 @@
                 <img class="logo-mark" src="images/5.png" alt="Símbolo" />
                 <span>Confirmar presença</span>
               </h2>
+              <p class="subtitle">(Para não teres desculpas)</p>
+
               <p class="section-subtitle">
                 Escreve quem vai e quem levas. Podes (e deves) levar
                 mini‑pessoas, mas se não tiveres não entres em pânico. O
@@ -794,7 +802,7 @@
               <img class="logo-mark" src="images/8.png" alt="Símbolo" />
               <span>Localização</span>
             </h2>
-            <p class="subtitle">(Para não teres desculpas)</p>
+            <p class="subtitle">(Para não teres mesmo desculpas)</p>
             <p class="section-subtitle">
               Carro, metro, teletransporte. O mapa não julga. O mapa é grande, o
               sentido de orientação é pequeno. Usa isto. Toca à campainha certa.
@@ -822,7 +830,15 @@
         </div>
       </section>
 
-      <footer>© 2026 — aniversário da Eva. Ironia incluída.</footer>
+      <footer
+        style="display: flex; flex-direction: column; align-items: center"
+      >
+        <img style="width: 100%; max-width: 500px" src="images/21.png" />
+        <span
+          >© 2026 - Uso de ironia e imagens do livro "I Want My Hat Back" de Jon
+          Klassen</span
+        >
+      </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
@@ -834,8 +850,6 @@
       const contactStatus = document.getElementById("contactStatus");
 
       contactForm.addEventListener("submit", async (event) => {
-        debugger;
-
         event.preventDefault();
         const formData = new FormData(contactForm);
         var names = formData.get("names");
