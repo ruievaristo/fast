@@ -7,22 +7,22 @@
     <link rel="icon" sizes="32x32" href="images/1.png" type="image/png" />
     <link rel="icon" sizes="16x16" href="images/1.png" type="image/png" />
     <link rel="apple-touch-icon" href="images/1.png" />
-    <meta property="og:title" content="Parece que alguém faz anos!" />
+    <meta property="og:title" content="A Eva faz anos (e tu és suspeito)" />
     <meta
       property="og:description"
-      content="Template simples com cores terrosas, muito espaço em branco e formas suaves para destacar projetos, livros e ilustrações."
+      content="A Eva faz anos. E sim, foste oficialmente convidado. Esta é a página oficial (e claramente essencial) sobre a festa"
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="images/3.png" />
     <meta property="og:url" content="https://ruievaristo.github.io/fast/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Parece que alguém faz anos!" />
+    <meta name="twitter:title" content="A Eva faz anos (e tu és suspeito)" />
     <meta
       name="twitter:description"
-      content="Template simples com cores terrosas, muito espaço em branco e formas suaves para destacar projetos, livros e ilustrações."
+      content="A Eva faz anos. E sim, foste oficialmente convidado. Esta é a página oficial (e claramente essencial) sobre a festa"
     />
     <meta name="twitter:image" content="images/3.png" />
-    <title>Parece que alguém faz anos!</title>
+    <title>A Eva faz anos!!</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
       :root {
@@ -87,6 +87,10 @@
         color: var(--charcoal);
         font-weight: 600;
         font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-direction: row;
       }
 
       main {
@@ -107,6 +111,12 @@
         margin: 0 0 12px;
       }
 
+      .hero-subtitle {
+        margin: -16px 0 20px !important;
+        font-size: 1.5rem;
+        color: #4d463f;
+      }
+
       .hero p {
         margin: 0 0 24px;
       }
@@ -120,13 +130,15 @@
         font-weight: 700;
         border-radius: 999px;
         box-shadow: 0 8px 16px var(--shadow);
+        margin-top: 33px;
       }
 
       .artboard {
         position: relative;
         display: grid;
         place-items: center;
-        justify-items: end;
+        justify-items: center;
+        align-items: center;
       }
 
       .hero-illustration {
@@ -142,29 +154,102 @@
       .section-title {
         margin: 0 0 16px;
         font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
 
       .section-subtitle {
         margin: 0 0 24px;
         color: #4d463f;
-        max-width: 680px;
       }
 
       .section-location {
         background: #f0ebdd;
       }
 
+      .photo-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        align-items: center;
+      }
+
+      .photo-section.alt {
+        background: var(--sand);
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .photo-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 18px;
+        box-shadow: 0 10px 24px var(--shadow);
+      }
+
+      .birthday-hero {
+        background: #e8dfd1;
+        border-radius: 24px;
+        padding: 48px 6vw;
+        margin: 0 8vw 32px;
+        text-align: left;
+      }
+
+      .birthday-hero h2 {
+        margin: 0 0 12px;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+      }
+
+      .birthday-details {
+        /*background: #fffdf9;
+        border-radius: 24px;
+        padding: 32px 6vw;
+        margin: 0 8vw 32px;
+        box-shadow: 0 10px 24px var(--shadow);*/
+      }
+
+      .birthday-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 8px;
+      }
+
+      .birthday-button {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 10px 18px;
+        background: #a2673f;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .birthday-footer {
+        background: #e8dfd1;
+        border-radius: 24px;
+        padding: 28px 6vw;
+        margin: 0 8vw 48px;
+      }
+
       .work-section {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(200px, 0.6fr);
-        gap: 24px;
+        grid-template-columns: 1fr;
+        gap: 0;
         align-items: start;
       }
 
       .work-media {
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        gap: 16px;
+        margin-top: -14px;
       }
 
       .work-illustration {
@@ -174,9 +259,26 @@
         display: block;
       }
 
+      .location-card {
+        background: var(--sand);
+        padding: 27px;
+        border-radius: 18px;
+        box-shadow: 0 8px 18px var(--shadow);
+        text-align: center;
+        max-width: 320px;
+        margin-top: -8px;
+      }
+
+      .location-card img {
+        width: 126px;
+        height: auto;
+        display: block;
+        margin: 0 auto 0px;
+      }
+
       .work-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
       }
 
@@ -250,7 +352,6 @@
 
       .contact-grid {
         display: grid;
-        grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1fr);
         gap: 24px;
         align-items: start;
       }
@@ -277,8 +378,6 @@
 
       .contact-form {
         display: grid;
-        gap: 12px;
-        max-width: 420px;
       }
 
       .contact-form label {
@@ -351,24 +450,24 @@
 
       .contact-form button {
         align-self: start;
-        padding: 10px 18px;
+        padding: 17px 12px;
         border: none;
         border-radius: 999px;
         background: var(--charcoal);
         color: #f4efe6;
         font-weight: 700;
         cursor: pointer;
+        font-size: 1.1rem;
+        margin-top: 30px;
       }
 
       .form-status {
         font-size: 0.95rem;
-        color: #4d463f;
+        color: #d85744;
+        padding: 15px;
+        margin-bottom: -68px;
+        font-weight: 600;
       }
-
-      .contact-light {
-        background: #f1ece8;
-      }
-
       footer {
         padding: 20px 8vw 32px;
         border-top: 1px solid #e3d9cb;
@@ -376,7 +475,13 @@
         color: #5b534b;
       }
 
-      @media (max-width: 600px) {
+      .subtitle {
+        font-size: 17px;
+        font-style: italic;
+        margin-top: -18px;
+      }
+
+      @media (max-width: 900px) {
         header {
           flex-direction: column;
           align-items: flex-start;
@@ -386,14 +491,31 @@
         nav a {
           margin-left: 0;
           margin-right: 12px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-direction: row;
         }
 
         main {
           gap: 24px;
         }
 
+        .artboard {
+          order: 1;
+        }
+
+        .hero {
+          order: 2;
+        }
+
         .work-section {
           grid-template-columns: 1fr;
+        }
+
+        .work-grid {
+          grid-template-columns: 1fr;
+          display: none;
         }
 
         .work-media {
@@ -403,6 +525,17 @@
 
         .work-illustration {
           height: auto;
+        }
+        .work-section {
+          grid-template-columns: 1fr;
+        }
+
+        .work-media2 {
+          order: 0;
+        }
+
+        .work-media3 {
+          order: 1;
         }
       }
     </style>
@@ -414,22 +547,43 @@
           <img class="logo-mark" src="images/1.png" alt="Símbolo" />
           <div class="logo">eva evaristo</div>
         </div>
-        <nav>
-          <a href="#topo">início</a>
-          <a href="#trabalhos">trabalhos</a>
-          <a href="#sobre">sobre</a>
-          <a href="#contato">contato</a>
+        <nav style="display: flex">
+          <!-- <a href="#sobre">sobre</a> -->
+          <!-- <a href="#festa">sobre</a> -->
+          <a href="#confirmar">
+            <img class="logo-mark" src="images/5.png" alt="Símbolo" /> confirmar
+            presença</a
+          >
+          <a href="#localizacao">
+            <img class="logo-mark" src="images/8.png" alt="Símbolo" /> onde é</a
+          >
         </nav>
       </header>
 
       <main>
         <section class="hero">
-          <h1>Um espaço calmo para histórias visuais.</h1>
+          <!-- <img class="logo-mark" src="images/4.png" alt="Símbolo" /> -->
+          <h1>A Eva faz anos.</h1>
+          <p class="hero-subtitle">E sim, foste oficialmente convidado.</p>
           <p>
-            Template simples com cores terrosas, muito espaço em branco e formas
-            suaves para destacar projetos, livros e ilustrações.
+            Esta é a página oficial (e claramente essencial) para confirmares a
+            presença, dizeres se trazes mini‑pessoas e veres onde é o encontro.
           </p>
-          <a class="cta" href="#">Quero ir...</a>
+
+          <div class="birthday-details">
+            <ul class="birthday-list">
+              <li>📅 <strong>Data:</strong> 14 Março 2026</li>
+              <li>⏰ <strong>Hora:</strong> 15h - 18h</li>
+              <li>
+                📍 <strong>Local:</strong>
+                <a href="#localizacao">Stork family Club</a> (Calçada da
+                Estrela, 100, 1200-665 Lisboa)
+              </li>
+              <li>📞 <strong>Confirmar até:</strong> 28 Fevereiro 2026</li>
+            </ul>
+          </div>
+
+          <a class="cta" href="#confirmar">Confirmar presença</a>
         </section>
 
         <section class="artboard" aria-label="Ilustração">
@@ -441,7 +595,138 @@
         </section>
       </main>
 
-      <section class="section about-dark" id="sobre">
+      <section class="section" id="momento1">
+        <div class="photo-section alt">
+          <div>
+            <img src="images/17.png" />
+          </div>
+          <div>
+            <div class="about-content">
+              <div>
+                <h2 class="section-title">O Caso do Primeiro Aniversário</h2>
+                <p>Há exatamente um ano nasceu alguém muito pequeno.</p>
+                <p>Muito querido. Muito observador.</p>
+                <p>Desde então cresceu, aprendeu, roubou corações…</p>
+                <p>E agora faz <strong>1 ANO</strong>.</p>
+                <p>
+                  É um momento especial que merece ser celebrado (dizem por ai)
+                </p>
+                <p>E tu tens o privilégio de ser convidado para a festa!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="momento2">
+        <div class="photo-section alt">
+          <div class="work-media3">
+            <div class="about-content">
+              <div>
+                <h2 class="section-title">Sobre a festa</h2>
+                <p class="section-subtitle">
+                  Festa de aniversário da Eva: comes bolo, dizes “parabéns” e
+                  finges que não vieste só por causa do bolo ou da cerveja
+                  grátis.
+                </p>
+                <p>
+                  Traz boa disposição, uma história ridícula e zero drama. Se
+                  vieres, avisa. Se não vieres, avisa na mesma para podermos
+                  falar mal de ti.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="work-media2">
+            <img src="images/19.jpg" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="momento3">
+        <div class="photo-section alt">
+          <div>
+            <img src="images/14.jpg" />
+          </div>
+          <div>
+            <div class="about-content">
+              <div>
+                <h2 class="section-title">
+                  Resumo do que está planeado (Provavelmente)
+                </h2>
+                <ul class="birthday-list">
+                  <li>🎂 Bolo (ninguém o perdeu)</li>
+                  <li>🍻 Cerveja grátis (até acabar)</li>
+                  <li>🎶 Música (ainda a escolher, mas vai ser boa)</li>
+                  <li>Conversas aleatórias e algumas histórias ridículas</li>
+                  <li>📸 selfies que ninguém pediu.</li>
+                  <li>👶 Um bebé muito feliz</li>
+
+                  <li>
+                    🐻 O urso, que é o anfitrião e tem um olhar muito sério
+                  </li>
+                  <li>Comida sem açúcar,</li>
+                  <li>
+                    Um quiz para os mais aventureiros e conhecedores da eva
+                  </li>
+
+                  <li>
+                    Dress code: Conforto primeiro, estilo depois. Ou ao
+                    contrário.
+                  </li>
+                  <li>
+                    🧦 Traz as melhores meias: vais andar descalço, reina.
+                  </li>
+                  <li>
+                    ⏳ Reserva rápido ou finges te surpreendido quando estiver
+                    cheio.
+                  </li>
+                  <li>
+                    Chega entre as 15h ou 18h porque depois já vais apanhar
+                    outra festa.
+                  </li>
+                  <li>
+                    🧸 Diversões e brinquedos para as mini‑pessoas. Sim, elas
+                    mandam.
+                  </li>
+                  <li>
+                    E claro, a tua presença (que é o que mais queremos, vá o Rui
+                    é capaz de querer menos pessoas possível).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="momento4">
+        <div class="photo-section alt">
+          <div class="work-media3">
+            <div class="about-content">
+              <div>
+                <h2 class="section-title">???</h2>
+              </div>
+            </div>
+          </div>
+          <div class="work-media2">
+            <img src="images/18.png" />
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="section" style="display: none" id="aniversario">
+        <div class="birthday-details"></div>
+
+        <div style="display: none" class="birthday-details">
+          <h2 class="section-title">Chapéus São Bem-Vindos</h2>
+          <p>Se quiseres trazer um chapéu:</p>
+          <p>Elegante. Divertido. Demasiado grande. Claramente suspeito.</p>
+          <p>O urso gosta de observar.</p>
+        </div>
+      </section>
+
+      <section class="section about-dark" style="display: none" id="sobre">
         <div class="about-grid">
           <div class="about-media">
             <img
@@ -452,114 +737,69 @@
           </div>
           <div class="about-content">
             <div>
-              <h2 class="section-title">Sobre</h2>
+              <h2 class="section-title">Sobre a festa</h2>
               <p class="section-subtitle">
-                Um estúdio dedicado a ilustrações com ritmo calmo, humor sutil e
-                muito espaço para respirar.
+                Festa de aniversário da Eva: comes bolo, dizes “parabéns” e
+                finges que não vieste só por causa do bolo.
+                <a href="#aniversario">aniversário</a>
               </p>
             </div>
             <div>
               <p>
-                Trabalho com narrativas visuais para livros, revistas e projetos
-                culturais. A estética aposta em texturas suaves, cores quentes e
-                formas simples.
+                Traz boa disposição, uma história ridícula e zero drama. Se
+                vieres, avisa. Se não vieres, avisa na mesma para podermos falar
+                mal de ti.
               </p>
               <p>
-                Disponível para colaborações e projetos personalizados em 2026.
+                Spoiler: vai haver música, conversas aleatórias e selfies que
+                ninguém pediu.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
-      <section class="section contact-light" id="contato">
+      <section class="section contact-light" id="confirmar">
         <div class="contact-grid">
-          <div class="contact-media">
-            <img
-              class="contact-image"
-              src="images/10.png"
-              alt="Ilustração contato"
-            />
-          </div>
           <div class="contact-content">
             <div>
-              <h2 class="section-title">Contato</h2>
+              <h2 class="section-title">
+                <img class="logo-mark" src="images/5.png" alt="Símbolo" />
+                <span>Confirmar presença</span>
+              </h2>
               <p class="section-subtitle">
-                Escreve até 5 nomes e indica se são crianças. Depois submete.
+                Escreve quem vai e quem levas. Podes (e deves) levar
+                mini‑pessoas, mas se não tiveres não entres em pânico. O
+                importante é apareceres.
               </p>
             </div>
             <form class="contact-form" id="contactForm">
-              <label>Participantes</label>
+              <textarea
+                id="namesList"
+                name="names"
+                placeholder="Ex: Rui, Ana, Joao"
+              ></textarea>
 
-              <div class="form-row">
-                <input name="name1" type="text" placeholder="Nome 1" />
-                <label class="child-toggle">
-                  <input name="child1" type="checkbox" />
-                  é criança
-                </label>
-              </div>
-
-              <div class="form-row">
-                <input name="name2" type="text" placeholder="Nome 2" />
-                <label class="child-toggle">
-                  <input name="child2" type="checkbox" />
-                  é criança
-                </label>
-              </div>
-
-              <div class="form-row">
-                <input name="name3" type="text" placeholder="Nome 3" />
-                <label class="child-toggle">
-                  <input name="child3" type="checkbox" />
-                  é criança
-                </label>
-              </div>
-
-              <div class="form-row">
-                <input name="name4" type="text" placeholder="Nome 4" />
-                <label class="child-toggle">
-                  <input name="child4" type="checkbox" />
-                  é criança
-                </label>
-              </div>
-
-              <div class="form-row">
-                <input name="name5" type="text" placeholder="Nome 5" />
-                <label class="child-toggle">
-                  <input name="child5" type="checkbox" />
-                  é criança
-                </label>
-              </div>
-
-              <button type="submit">Enviar</button>
+              <button type="submit">Carrega aqui para confirmar</button>
               <div class="form-status" id="contactStatus"></div>
             </form>
           </div>
         </div>
       </section>
 
-      <section class="section section-location" id="trabalhos">
+      <section class="section section-location" id="localizacao">
         <div class="work-section">
           <div>
-            <h2 class="section-title">Localização</h2>
+            <h2 class="section-title">
+              <img class="logo-mark" src="images/8.png" alt="Símbolo" />
+              <span>Localização</span>
+            </h2>
+            <p class="subtitle">(Para não teres desculpas)</p>
             <p class="section-subtitle">
-              Projetos recentes com foco em narrativa visual, capas de livro e
-              ilustrações editoriais.
+              Carro, metro, teletransporte. O mapa não julga. O mapa é grande, o
+              sentido de orientação é pequeno. Usa isto. Toca à campainha certa.
+              A errada é só para aventuras extra.
             </p>
-            <div class="work-grid">
-              <article class="work-card">
-                <h3>Série editorial</h3>
-                <p>Ilustrações suaves e minimalistas para histórias curtas.</p>
-              </article>
-              <article class="work-card">
-                <h3>Capa de livro</h3>
-                <p>Composição terrosa com personagens expressivos.</p>
-              </article>
-              <article class="work-card">
-                <h3>Identidade visual</h3>
-                <p>Paleta quente e tipografia simples para marcas criativas.</p>
-              </article>
-            </div>
           </div>
           <div class="work-media">
             <img
@@ -567,11 +807,22 @@
               src="images/stork_map.png"
               alt="Mapa Stork"
             />
+            <div class="location-card">
+              <img src="images/stork_logo.png" alt="Stork" />
+              Calçada da Estrela, 100<br />
+              1200-665 Lisboa<br />
+              <a
+                href="https://maps.app.goo.gl/oq55wKTtmDvYtd4U8"
+                target="_blank"
+                rel="noopener"
+                >Abrir no Google Maps</a
+              >
+            </div>
           </div>
         </div>
       </section>
 
-      <footer>© 2026 — baseado nos livros de Jon Klassen</footer>
+      <footer>© 2026 — aniversário da Eva. Ironia incluída.</footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
@@ -583,13 +834,22 @@
       const contactStatus = document.getElementById("contactStatus");
 
       contactForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        contactStatus.textContent = "A enviar...";
+        debugger;
 
+        event.preventDefault();
         const formData = new FormData(contactForm);
+        var names = formData.get("names");
+        if (names == "" || names == null) {
+          contactStatus.textContent =
+            "Escreve pelo menos o teu nome ou queres que adicione  'Suspeito Anónimo' à lista?";
+          return;
+        }
+
+        contactStatus.textContent =
+          "Aguardar um momento que estou a ver se ainda temos vaga";
+
         const payload = {
-          name: formData.get("name1"),
-          isChild: formData.get("child1") === "on",
+          name: names,
         };
 
         const { error } = await supabaseClient.from("Guests").insert(payload);
@@ -599,7 +859,8 @@
           return;
         }
 
-        contactStatus.textContent = "Obrigado! Mensagem enviada.";
+        contactStatus.textContent =
+          "Obrigado, já está confirmado! Agora já não tens desculpa...";
         contactForm.reset();
       });
     </script>
