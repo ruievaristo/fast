@@ -14,7 +14,8 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="images/22.png" />
-    <meta property="og:url" content="https://www.evafazanos.pt/" />
+    <!-- <meta property="og:url" content="https://www.evafazanos.pt/" /> -->
+    <meta property="og:url" content="https://ruievaristo.github.io/fast/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="A Eva faz anos!!" />
     <meta
@@ -464,7 +465,7 @@
 
       .form-status {
         font-size: 0.95rem;
-        color: #d85744;
+        color: #1b8f39;
         padding: 15px;
         margin-bottom: -68px;
         font-weight: 600;
@@ -540,6 +541,17 @@
         }
       }
     </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "Person",
+        "name": "Eva Evaristo",
+        "description": "E sim, foste oficialmente convidado. Esta é a página oficial (e claramente essencial) sobre a festa",
+        "image": "https://ruievaristo.github.io/fast/images/22.png",
+        "url": "https://www.evafazanos.pt"
+      }
+    </script>
   </head>
   <body>
     <div class="page" id="topo">
@@ -610,7 +622,7 @@
                 <p>Desde então cresceu, aprendeu, roubou corações…</p>
                 <p>E agora faz <strong>1 ANO</strong>.</p>
                 <p>
-                  É um momento especial que merece ser celebrado (dizem por ai)
+                  É um momento especial que merece ser celebrado (dizem por aí)
                 </p>
                 <p>E tu tens o privilégio de ser convidado para a festa!</p>
               </div>
@@ -656,49 +668,20 @@
                   Resumo do que está planeado (Provavelmente)
                 </h2>
                 <ul class="birthday-list">
-                  <li>🎂 Bolo (ninguém o perdeu)</li>
+                  <li>🎂 Bolo (duhhh)</li>
                   <li>🍻 Cerveja grátis (até acabar)</li>
                   <li>🎶 Música (ainda a escolher, mas vai ser boa)</li>
-                  <li>Conversas aleatórias e algumas histórias ridículas</li>
-                  <li>📸 selfies que ninguém pediu.</li>
-                  <li>👶 Um bebé muito feliz</li>
-
-                  <li>
-                    🐻 O urso, que é o anfitrião e tem um olhar muito sério
-                  </li>
-                  <li>Comida sem açúcar,</li>
+                  <li>🗣️ Conversas aleatórias e algumas histórias ridículas</li>
+                  <li>📸 Selfies que ninguém pediu.</li>
+                  <li>🍽️ Comida sem açúcar e opções sem gluten</li>
                   <li>
                     Um quiz para os mais aventureiros e conhecedores da eva
-                  </li>
-
-                  <li>
-                    Dress code: Conforto primeiro, estilo depois. Ou ao
-                    contrário.
-                  </li>
-                  <li>
-                    🧦 Traz as melhores meias: vais andar descalço, reina.
-                  </li>
-                  <li>
-                    ⏳ Reserva rápido ou finges te surpreendido quando estiver
-                    cheio.
-                  </li>
-                  <li>
-                    🎁 Não é necessário trazer um presente, a Eva não vai
-                    perceber quem trouxe ou não, aproveita agora.
-                  </li>
-
-                  <li>
-                    Chega entre as 15h ou 18h porque depois já vais apanhar
-                    outra festa.
                   </li>
                   <li>
                     🧸 Diversões e brinquedos para as mini‑pessoas. Sim, elas
                     mandam.
                   </li>
-                  <li>
-                    E claro, a tua presença (que é o que mais queremos, vá o Rui
-                    é capaz de querer menos pessoas possível).
-                  </li>
+                  <li>👶 Um bebé muito feliz</li>
                 </ul>
               </div>
             </div>
@@ -712,6 +695,32 @@
             <div class="about-content">
               <div>
                 <h2 class="section-title">???</h2>
+                <ul class="birthday-list">
+                  <li>
+                    🩲 Dress code: Conforto primeiro, estilo depois. Ou ao
+                    contrário.
+                  </li>
+                  <li>
+                    🧦 Traz as melhores meias: vais andar descalço, aproveita.
+                  </li>
+                  <li>
+                    ⏳ Confirma rápido ou finge ficar surpreendido quando já não
+                    tiveres lugar.
+                  </li>
+                  <li>
+                    🎁 Não é necessário trazer um presente, a Eva não vai
+                    perceber quem trouxe ou não, aproveita agora.
+                  </li>
+                  <li>
+                    ⏰ Chega entre as 15h ou 18h porque depois já vais apanhar
+                    outra festa.
+                  </li>
+
+                  <!-- <li>
+                    E claro, a tua presença (que é o que mais queremos, vá o Rui
+                    é capaz de querer menos pessoas possível).
+                  </li> -->
+                </ul>
               </div>
             </div>
           </div>
@@ -789,7 +798,17 @@
               ></textarea>
 
               <button type="submit">Carrega aqui para confirmar</button>
-              <div class="form-status" id="contactStatus"></div>
+              <div class="form-status" id="contactSuccess"></div>
+              <div
+                class="form-status"
+                style="color: #d85744"
+                id="contactError"
+              ></div>
+              <div
+                class="form-status"
+                style="color: #3291a0"
+                id="contactLoading"
+              ></div>
             </form>
           </div>
         </div>
@@ -847,20 +866,26 @@
 
       const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
       const contactForm = document.getElementById("contactForm");
-      const contactStatus = document.getElementById("contactStatus");
+      const contactError = document.getElementById("contactError");
+      const contactSuccess = document.getElementById("contactSuccess");
+      const contactLoading = document.getElementById("contactLoading");
 
       contactForm.addEventListener("submit", async (event) => {
+        contactError.textContent = "";
+        contactSuccess.textContent = "";
+        contactLoading.textContent = "";
         event.preventDefault();
         const formData = new FormData(contactForm);
         var names = formData.get("names");
         if (names == "" || names == null) {
-          contactStatus.textContent =
+          contactError.textContent =
             "Escreve pelo menos o teu nome ou queres que adicione  'Suspeito Anónimo' à lista?";
           return;
         }
 
-        contactStatus.textContent =
+        contactLoading.textContent =
           "Aguardar um momento que estou a ver se ainda temos vaga";
+        ("Aguardar um momento que estou a ver se ainda temos vaga");
 
         const payload = {
           name: names,
@@ -868,12 +893,13 @@
 
         const { error } = await supabaseClient.from("Guests").insert(payload);
 
+        contactLoading.textContent = "";
         if (error) {
-          contactStatus.textContent = "Erro ao enviar. Tenta novamente.";
+          contactError.textContent = "Erro ao enviar. Tenta novamente.";
           return;
         }
 
-        contactStatus.textContent =
+        contactSuccess.textContent =
           "Obrigado, já está confirmado! Agora já não tens desculpa...";
         contactForm.reset();
       });
